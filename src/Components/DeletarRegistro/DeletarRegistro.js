@@ -12,6 +12,11 @@ const DeletarRegistro = ({id, onDelete}) =>{
                 throw new Error('Network reponse was not ok!');
             }
             alert(`Registro com ID ${id} deletado com sucesso!`)
+
+            if (onDelete) {
+                onDelete();
+            }
+
         } catch (error) {
             alert('Houve um problema com a operação de exclusão:', error)
         }
